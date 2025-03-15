@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RecipeManagementSystemAPI.Models
 {
@@ -19,5 +20,9 @@ namespace RecipeManagementSystemAPI.Models
         public string Category { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public int? UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User? User { get; set; }
     }
 }
